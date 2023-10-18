@@ -1,0 +1,2 @@
+Criar programa que armazena o nome, número do cpf [verificando se é válido) em uma lista e o escreva numa arquivo do tipo .CSV
+O programa deverá conter funções de releitura do arquivo e poder adicionar novos nomes sempre que o usuário adicionar mais valores.
