@@ -7,17 +7,35 @@ namespace ExercEscreveCSVConsole
     {
         static void Main(string[] args)
         {
-            AddCustomer addCostumer = new AddCustomer();
 
-            Console.WriteLine("Insira a quantidade de dados que gostaria de inserir no vetor no seguinte formato: name, CPF");
-            
-            string userInput = Console.ReadLine();
+            try
+            {
+                //Insere o tamanho do vetor
+                AddCustomer addCostumer = new AddCustomer();
 
-            string[] separator = userInput.Split(", ");
+                Console.WriteLine("Insira a quantidade de dados que gostaria de inserir no vetor no seguinte formato: quantidade nome, quantidade CPF");
 
-            addCostumer.AddQtd(int.Parse(separator[0]), int.Parse(separator[1]));
+                string userQtd = Console.ReadLine();
 
-            Console.WriteLine(addCostumer.AddCustomerVectorSize());
+                string[] separator = userQtd.Split(", ");
+
+                addCostumer.AddQtd(int.Parse(separator[0]), int.Parse(separator[1]));
+
+                Console.WriteLine(addCostumer.AddCustomerVectorSize());
+
+                //Insere os dados do nome
+                Console.WriteLine("Você deve inserir os dados agora. Caso queira sair, digite -1");
+                /*
+                while () {
+                }*/
+
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Aconteceu um erro!");
+                Console.WriteLine(e.Message);
+            }
 
         }
     }

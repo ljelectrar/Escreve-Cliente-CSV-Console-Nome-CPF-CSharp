@@ -15,10 +15,21 @@ namespace ExercEscreveCSVConsole.Services
         public void AddQtd(int addQtdName, int addQtdCPF)
         {
             _AllDataCostumer = new string[addQtdName, addQtdCPF];
+
+            if (addQtdName != addQtdCPF) {
+                Console.WriteLine("Atenção: atenção, a quantidade de número e cpf estão diferentes!" +
+                    "\n Poderá haver ambiguidades no banco de dados!");
+            }
         }
 
         public int AddCustomerVectorSize() {
             return _AllDataCostumer.Length; 
+        }
+
+        public void AddDataCostumer(string costumerName, string costumerCPF) 
+        {
+            AddDataName(costumerName);
+            AddDataCPF(costumerCPF);
         }
 
         public void AddDataName(string name)
